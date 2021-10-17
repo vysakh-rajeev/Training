@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: SpringBootCrud
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: vyskh
+Implementation-Vendor-Id: com.xadmin
+Build-Jdk: 1.8.0_202
+Implementation-URL: https://spring.io/projects/spring-boot/SpringBootC
+ rud
+Created-By: Maven Integration for Eclipse
+
