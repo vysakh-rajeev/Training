@@ -14,6 +14,7 @@ import com.xadmin.SpringBootCrud.bean.Employee;
 import com.xadmin.SpringBootCrud.service.EmployeeServices;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class EmployeeController {
@@ -30,8 +31,16 @@ public class EmployeeController {
 		logger.info("Fetching all Employee Details");
 		return employeeServices.getAllEmployee();
 	}
+	
+	@RequestMapping(method = RequestMethod.GET, value="/findemployee/{id}")
+	public Optional<Employee> getEmployee(@PathVariable("id") Long empid) {
+		
+		logger.info("Retrieved Employee details wrt Employee id");
+		return employeeServices.getEmployee(empid);
+	
+	}
 
-	@RequestMapping(method = RequestMethod.POST, value="/employees")
+	@RequestMapping(method = RequestMethod.POST, value="/add")
 	public void addEmployee(@RequestBody Employee employee) {
 		
 		logger.info("Adding new Employee");
@@ -47,7 +56,7 @@ public class EmployeeController {
 	
 	}
 	
-	@RequestMapping(method = RequestMethod.DELETE, value="/employees/{id}")
+	@RequestMapping(method = RequestMethod.DELETE, value="/delete/{id}")
 	public void deleteEmployee(@PathVariable Long id) {
 		
 		logger.info("Deleting employee with employee id");
