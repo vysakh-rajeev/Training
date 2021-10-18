@@ -8,6 +8,7 @@ import com.xadmin.SpringBootCrud.repository.EmployeeRepo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeServices {
@@ -20,6 +21,12 @@ public class EmployeeServices {
 		List<Employee> employees= new ArrayList<>();
 		employeeRepo.findAll().forEach(employees::add);
 		return employees;
+		
+	}
+	public Optional<Employee> getEmployee(Long id) {
+		
+		return employeeRepo.findById(id);
+		
 		
 	}
 
